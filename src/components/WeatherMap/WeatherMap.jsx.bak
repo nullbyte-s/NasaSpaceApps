@@ -101,6 +101,11 @@ const WeatherMap = ({ cityName, weatherData, latitude, longitude }) => {
             <p>Risco de {riskType}: {riskLevel}</p>
           </div>
         </Tooltip>
+        <Tooltip direction="top" offset={[0, -10]}>
+          <span>
+            {cityName} - {riskLevel} ({riskType})
+          </span>
+        </Tooltip>
       </Circle>
       {riskType === 'Inundação' && (
         <div className="rain-effect" />

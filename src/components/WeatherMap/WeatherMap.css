@@ -4,3 +4,116 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+/* Estilos para o risco de queimadas */
+.fire-risk {
+    background-image: url('https://picsum.photos/200/300');
+    background-size: cover;
+    background-position: center;
+    animation: fire-animation 2s infinite;
+}
+  
+.fire-risk::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://picsum.photos/200/300');
+    background-size: cover;
+    background-position: center;
+    animation: fire-animation 2s infinite;
+}
+  
+@keyframes fire-animation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+  
+  /* Estilos para o risco de inundações */
+.flood-risk {
+    background-image: url('https://picsum.photos/200/301');
+    background-size: cover;
+    background-position: center;
+    animation: flood-animation 2s infinite;
+}
+  
+.flood-risk::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://picsum.photos/200/301');
+    background-size: cover;
+    background-position: center;
+    animation: flood-animation 2s infinite;
+}
+  
+@keyframes flood-animation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+  
+/* Efeito de chuva */
+.rain-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://picsum.photos/200/302');
+    background-size: cover;
+    background-position: center;
+    animation: rain-animation 2s infinite;
+}
+  
+@keyframes rain-animation {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+}
+  
+/* Efeito de fogo */
+.fire-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://picsum.photos/200/303');
+    background-size: cover;
+    background-position: center;
+    animation: fire-effect-animation 2s infinite;
+}
+  
+@keyframes fire-effect-animation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+}

@@ -1,60 +1,26 @@
-import { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
-import Login from "./components/Login";
+import React, { useState } from "react";
 import Home from "./components/Home";
-import Register from "./components/Register";
+import Login from "./components/Login";
+import WeatherApp from './components/WeatherApp/WeatherApp';
 import "./App.css";
+import './styles/global.css';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
-  useEffect(() => {
-    const loggedInStatus = localStorage.getItem("isLoggedIn");
-    if (loggedInStatus === "true") {
-      setIsLoggedIn(true);
-    }
-  }, []);
-
-  // Função de logout
   const handleLogout = () => {
     setIsLoggedIn(false);
-    localStorage.removeItem("isLoggedIn");
   };
 
   return (
-    <Router>
-      <Routes>
-        {/* Rota de login */}
-        <Route
-          path="/"
-          element={
-            isLoggedIn ? (
-              <Navigate to="/home" />
-            ) : (
-              <Login setIsLoggedIn={setIsLoggedIn} />
-            )
-          }
-        />
-
-        {/* Rota da home */}
-        <Route
-          path="/home"
-          element={
-            isLoggedIn ? <Home onLogout={handleLogout} /> : <Navigate to="/" />
-          }
-        />
-
-        <Route
-          path="/register"
-          element={<Register onLogout={handleLogout} />}
-        />
-      </Routes>
-    </Router>
+    <div>
+      {isLoggedIn ? (
+        // <Home onLogout={handleLogout} />
+        <WeatherApp />
+      ) : (
+        <Login onLogin={() => setIsLoggedIn(true)} />
+      )}
+    </div>
   );
 }
 
